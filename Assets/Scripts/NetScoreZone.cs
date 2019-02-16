@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NetScoreZone : MonoBehaviour
 {
+    public Scoreboard Scoreboard;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,9 @@ public class NetScoreZone : MonoBehaviour
             && collider.GetComponent<Rigidbody2D>().velocity.y < 0)
         {
             Debug.Log("Basketball entered the net!");
-            
+
+            // increment the score
+            Scoreboard.Score++;
         }
     }
 }
